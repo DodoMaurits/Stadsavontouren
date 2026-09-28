@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leiden Singel Tijdreiziger</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body class="spelpagina">
+
+    <div class="container">
+        <div id="page-0" class="page" data-title="Introductie">
+            <div class="intro-box">
+                <h2>Introductie</h2>
+                <p>Voor het eerst in de geschiedenis is het een professor gelukt een tijdmachine te bouwen.
+                Na de geslaagde sprong terug in de tijd, sloeg de machine echter plots op hol. Sindsdien wordt de 
+                tijdreiziger elke <b>vijf minuten</b> naar een willekeurig moment in de geschiedenis geslingerd. 
+                Het uur loopt telkens opnieuw af, waardoor hij vastzit in een eindeloze tijdlus van <b>12 jaartallen</b>.
+                <br><br>Om de tijdreiziger terug te halen, hebben wij de precieze jaartallen nodig van de plekken waar 
+                hij telkens terechtkomt. Hoe meer correcte jaartallen we invoeren, hoe groter de kans dat we hem precies op 
+                het juiste moment onderscheppen en kunnen terughalen naar het heden. Gelukkig had hij in de tijdmachine 
+                een speciaal apparaat ingebouwd waarmee hij <b>korte berichten</b> naar ons kan sturen. In die berichten 
+                beschrijft hij wat hij om zich heen ziet.
+                <br><br>Jouw taak is simpel maar cruciaal: <b>ontrafel de hints</b>, bepaal het <b>juiste jaartal</b> 
+                en haal de tijdreiziger terug naar het heden.
+                </p>
+            </div>
+            <div class="nav-buttons">
+                <a class="nav-button next" data-page="1" id="startTimerButton">Start de tijd</a>
+            </div>
+        </div>
+
+        <div id="page-1" class="page" data-title="Vraag 1">
+            <div class="intro-box">
+               <h2>Het Wereldmuseum</h2>
+                <p class="center">Punt 1/12</p>
+                <p>“Oké… ik denk dat ik in een soort ziekenhuis ben beland. Het is donker, ik hoor overal gekuch en mensen die 
+                zuchten van pijn. Net ving ik een gesprek op van twee verpleegkundigen. Ze zeiden dat het ziekenhuis bij de 
+                opening nog 150 bedden telde, maar nu al zeker 255 bedden. De andere zuster antwoordde dat het 
+                ziekenhuis elke 4 jaar 15 nieuwe bedden heeft besteld. Kunnen jullie hier iets mee?”
+                </p>
+            </div>
+            <div class="jaartallen-grid"></div>
+            <div class="nav-buttons">
+                <a class="nav-button previous" data-page="0">Vorige</a>
+                <a class="nav-button next" data-page="2.1">Volgende</a>
+            </div>
+        </div>
+
+        <div id="page-2.1" class="page" data-title="Punt 2">
+            <div class="instruction-box">
+                <h2>Ga naar punt 2</h2>
+                <img src="../icons/Route.png" alt="Route"><br>
+                <p>Houd het water aan je rechterhand en loop om het museum heen met de bocht mee naar links.
+                Loop rechtdoor tot je voor stadspoort de Morspoort staat.</p>
+            </div>
+            <div class="jaartallen-grid"></div>
+            <div class="nav-buttons">
+                <a class="nav-button previous" data-page="1">Vorige</a>
+                <a class="nav-button next" data-page="2.2">Volgende</a>
+            </div>
+        </div>
+
+        <div id="page-2.2" class="page" data-title="Vraag 2">
+            <div class="intro-box">
+                <h2>Morspoort</h2>
+                <p class="center">Punt 2/12</p>
+                <p>“Het miezert. Om mij heen zie ik soldaten in uniformen in en uit de kazerne gaan. Ze spreken Duits. 
+                  Net kwam een brancard voorbij met een militair met veel bloed en verband om zijn hoofd. Hij ging een 
+                  gebouw met een groot rood kruis binnen, ik vermoed een hospitaal. Aan de overkant van het water zijn 
+                  ze aan het bouwen, wat eruit ziet als een zware bunker. Ik ving net een gesprek op over een jongen 
+                  die hier zou hebben gewoond en 9 jaar geleden een grote politieke misdaad zou hebben begaan.”
+                </p>
+            </div>
+            <div class="jaartallen-grid"></div>
+            <div class="nav-buttons">
+                <a class="nav-button previous" data-page="2.1">Vorige</a>
+                <a class="nav-button next" data-page="3.1">Volgende</a>
+            </div>
+        </div>
+
+        <div id="page-3.1" class="page" data-title="Punt 3">
+            <div class="instruction-box">
+                <h2>Ga naar punt 3</h2>
+                <img src="../icons/Route.png" alt="Route">
+                <p>Loop verder langs het water om het gebouw naar Park De Put. 
+                Loop het park door tot voorbij de molen en vervolg over de witte ophaalbrug naar de overkant
+                van het water. Sla na de brug de eerste rechtsaf naar het Rembrandtpleintje.
+                </p>
+            </div>
+            <div class="jaartallen-grid"></div>
+            <div class="nav-buttons">
+                <a class="nav-button previous" data-page="2.2">Vorige</a>
+                <a class="nav-button next" data-page="3.2">Volgende</a>
+            </div>
+        </div>
+
+        <div id="page-3.2" class="page" data-title="Vraag 3">
+            <div class="intro-box">
+                <h2>Rembrandtpleintje</h2>
+                <p class="center">Punt 3/12</p>
+                <p>“Overal waar ik kijk zie ik mensen met groenten, fruit en bloemen in de weer. Er zijn kleine 
+                appelbomen, mensen zijn op hun knieën in de aarde aan het wroeten en lopen met kruiwagens en 
+                gieters rond. Ook was er één jongen aan het schilderen tussen de moestuinen in. Een vrouw riep 
+                naar hem of hij niet eens iets zou doen aan het onkruid in zijn tuin, terwijl zij hem herinnerde 
+                hoeveel hij twee jaar geleden had betaald voor zijn stukje grond.”
+                </p>
+            </div>
+            <div class="jaartallen-grid"></div>
+            <div class="nav-buttons">
+                <a class="nav-button previous" data-page="3.1">Vorige</a>
+                <a class="nav-button next" data-page="4.1">Volgende</a>
+            </div>
+        </div>
+
+        <div id="page-4.1" class="page" data-title="Punt 4">
+            <div class="instruction-box">
+                <h2>Ga naar punt 4</h2>
+                <img src="../icons/Route.png" alt="Route">
+                <p>Houd het water aan je rechterhand en neem de bocht naar links door het parkje.
+                Steek vervolgens de weg over en loop rechtdoor onder het gebouw door om het Singelpark te vervolgen.
+                <br>Ga aan het eind van het park over het bruggetje naar de speeltuin.</p>
+            </div>
+            <div class="jaartallen-grid"></div>
+            <div class="nav-buttons">
+                <a class="nav-button previous" data-page="3.2">Vorige</a>
+                <a class="nav-button next" data-page="4.2">Volgende</a>
+            </div>
+        </div>
+
+        <div id="page-4.2" class="page" data-title="Vraag 4">
+            <div class="intro-box">
+                <h2>Speeltuin Arsenaalplein</h2>
+                <p class="center">Punt 4/12</p>
+                <p>“Weer zie ik militairen, maar deze uniformen zijn veel ouder en Nederlands. Ze lopen in en uit 
+                een kazerne. Ik gluurde net naar binnen en zag een groot schilderij van koning Willem II aan de 
+                muur hangen. Ook zag ik allerlei papieren op een bureau die ik niet kon lezen. Alleen het logo kon 
+                ik zien, van een organisatie genaamd Walker & Co. Zojuist hoorde ik iemand zeggen dat er deze week
+                een gietijzeren kanon uit het Britse Rijk hier zal worden geplaatst, slechts vorig jaar gegoten.”
+                </p>
+            </div>
+            <div class="jaartallen-grid"></div>
+            <div class="nav-buttons">
+                <a class="nav-button previous" data-page="4.1">Vorige</a>
+                <a class="nav-button next" data-page="5.1">Volgende</a>
+            </div>
+        </div>
+
+        <div id="page-5.1" class="page" data-title="Punt 5">
+            <div class="instruction-box">
+                <h2>Ga naar punt 5</h2>
+                <img src="../icons/Route.png" alt="Route">
+                <p>Loop met je rug naar het water rechts het speeltuintje uit en ga rechtdoor.
+                Blijf op de Arsenaalstraat tot je bij de gracht van Sebastiaansdoelen bent.<br>
+                Ga rechtsaf, steek het grachtje over en ga linksaf de Doelensteeg in. 
+                Sla op het Rapenburg rechtsaf en houd de gracht aan je linkerhand tot je
+                het hek van de Hortus Botanicus treft van de Universiteit Leiden.
+                </p>
+            </div>
+            <div class="jaartallen-grid"></div>
+            <div class="nav-buttons">
+                <a class="nav-button previous" data-page="4.2">Vorige</a>
+                <a class="nav-button next" data-page="5.2">Volgende</a>
+            </div>
+        </div>
+
+        <div id="page-5.2" class="page" data-filename="Leiden-L1-singel-mm-5vraag.html" data-title="Vraag 5">
+            <div class="intro-box">
+                <h2>Hortus Universiteit Leiden</h2>
+                <p class="center">Punt 5/12</p>
+                <p>“Om te schuilen voor een hagelbui ben ik snel een kerkachtig gebouw binnen geglipt, waar een 
+                heel schouwspel aan de gang is. Onopgemerkt door de nonnen langs de muren en geestelijken in 
+                rijk versierde gewaden bevind ik mij achterin de ruimte. Het ruikt sterk naar wierook en bijenwas. 
+                Een van hen besprenkelt de muren en het altaar met wijwater en spreekt plechtige Latijnse gebeden 
+                die door de gewelven galmen. Een koor zet gregoriaanse gezang in. Voor mij slaan mensen op 
+                bankjes een kruis, knielen of fluisteren gebeden. Nadat de bisschop iets zei als ‘dedicatur haec 
+                ecclesia in honorem Dei omnipotentis’ hoorde ik buiten de klokken luiden.”
+                </p>
+            </div>
+            <div class="jaartallen-grid"></div>
+            <div class="nav-buttons">
+                <a class="nav-button previous" data-page="5.1">Vorige</a>
+                <a class="nav-button next" data-page="6.1">Volgende</a>
+            </div>
+        </div>
+
+        <div id="page-6.1" class="page" data-title="Punt 6">
+            <div class="instruction-box">
+                <h2>Ga naar punt 6</h2>
+                <img src="../icons/Route.png" alt="Route">
+                <p>Vervolg het Rapenburg met de gracht aan je linkerhand tot je bij een bruggetje komt.
+                Sla rechtsaf de Vliet op en loop langs het smallere grachtje net zo lang tot je bij de Singel komt.
+                Ga linksaf de Korte Vlietbrug over en alsmaar rechtdoor met de Singel aan je rechterhand tot
+                je de Jan van Houtkade uit bent om de weg over te steken naar het Plantsoen en vervolg je weg 
+                langs het water. Stop bij het vogelverblijf.</p>
+            </div>
+            <div class="jaartallen-grid"></div>
+            <div class="nav-buttons">
+                <a class="nav-button previous" data-page="5.2">Vorige</a>
+                <a class="nav-button next" data-page="6.2">Volgende</a>
+            </div>
+        </div>
+
+        <div id="page-6.2" class="page" data-title="Vraag 6">
+            <div class="intro-box">
+                <h2>Volière Plantsoen</h2>
+                <p class="center">Punt 6/12</p>
+                <p>“Het is hier verbazingwekkend mooi. Ik zie een kronkelend, breed wandelpad tussen grasvelden en 
+                bomen, en hoor vogels en kinderen spelen in de vijver. Er lopen heren met hoge hoeden en dames 
+                met lange jurken. Zojuist rende een kind voorbij achter een hoepel aan. Over de singel glijdt een 
+                schuit langzaam door het kabbelende water. Aan de overkant zie ik tussen enkele huizen en tuinen 
+                door het open land. Op een bankje lag een lokale krant. Op de voorpagina staat een artikel over 
+                de hoge vogelsterfte in de volière. Ondanks de grootse opening twee jaar geleden zouden 
+                inmiddels al meer dan 20 vogels zijn overleden. De burgemeester pleit voor een onderzoek, maar 
+                vindt het te vroeg om de volière te sluiten.”
+                </p>
+            </div>
+            <div class="jaartallen-grid"></div>
+            <div class="nav-buttons">
+                <a class="nav-button previous" data-page="6.1">Vorige</a>
+                <a class="nav-button next" data-page="7.1">Volgende</a>
+            </div>
+        </div>
+
+        <div id="page-7.1" class="page" data-title="Punt 7">
+            <div class="instruction-box">
+                <h2>Ga naar punt 7</h2>
+                <img src="../icons/Route.png" alt="Route">
+                <p>Vervolg je weg door het Plantsoen. Houd het water aan je rechterhand net zo lang totdat je het park uit bent.
+                Steek de weg over via het zebrapad en vervolg het pad door het groen tot je Café Plantage treft.
+                Sla rechtsaf de Veerstraat in en stop op het Co-Snookerplein.<p>
+            </div>
+            <div class="jaartallen-grid"></div>
+            <div class="nav-buttons">
+                <a class="nav-button previous" data-page="6.2">Vorige</a>
+                <a class="nav-button next" data-page="7.2">Volgende</a>
+            </div>
+        </div>
+
+        <div id="page-7.2" class="page" data-title="Vraag 7">
+            <div class="intro-box">
+                <h2>Co-Snookerplein</h2>
+                <p class="center">Punt 7/12</p>
+                <p>“Dit is vreemd, het lijkt wel de toekomst. Ik zie gebouwen met airco’s en andere apparaten op 
+                de daken en tegen de muren. Er is veel groen, maar het is broeierig heet. Af en toe slaat een golf 
+                van de gracht over de rand tegen zandzakken en perkjes. Op het water varen bootjes glinsterend van 
+                de zonnepanelen geruisloos voorbij. Achter mij op het plein is een uitvaart bezig. Een vrouw houdt 
+                een toespraak over de positieve levensinstelling en betrokkenheid van de overledene 
+                als vrijwilliger en leraar. Sommige aanwezigen hebben brillen op met lichtjes aan de zijkant.”
+                </p>
+            </div>
+            <div class="jaartallen-grid"></div>
+            <div class="nav-buttons">
+                <a class="nav-button previous" data-page="7.1">Vorige</a>
+                <a class="nav-button next" data-page="8.1">Volgende</a>
+            </div>
+        </div>
+
+        <div id="page-8.1" class="page" data-title="Punt 8">
+            <div class="instruction-box">
+                <h2>Ga naar punt 8</h2>
+                <img src="../icons/Route.png" alt="Route">
+                <p>Loop de steile brug over en ga rechtdoor. 
+                Blijf op de Kaarsenmakersstraat en vervolg het pad door het wandelgebied van het Lakenplein,
+                tot je aan je rechterhand een wit bruggetje ziet. Loop over het bruggetje en betreed Speeltuin 
+                De Doorbraak. Loop door de speeltuin tot je bij de uitgang aan de autoweg Oosterkerkstraat bent. 
+                </p>
+            </div>
+            <div class="jaartallen-grid"></div>
+            <div class="nav-buttons">
+                <a class="nav-button previous" data-page="7.2">Vorige</a>
+                <a class="nav-button next" data-page="8.2">Volgende</a>
+            </div>
+        </div>
+
+        <div id="page-8.2" class="page" data-title="Vraag 8">
+            <div class="intro-box">
+                <h2>Katoenpark</h2>
+                <p class="center">Punt 8/12</p>
+                <p>“Wat een chaos! Overal lopen mensen in arbeidersoveral af en aan spullen te sjouwen en rijden 
+                karren met goederen langs. Uit open ramen klinkt het ratelen van stoommachines en op veel plekken 
+                ligt glas. Het stinkt naar steenkool en verbrand hout. Voor mij rijst een hoge fabrieksschoorsteen 
+                boven de daken met grote happen eruit. Iedereen heeft het over een grote blikseminslag die 
+                gisteravond in de schoorsteen plaatsvond, waarvan de rondvliegende stenen veel ramen en daken 
+                hebben vernield. Met name het dak van de katoenmaatschappij, die vorig jaar nog groots haar 
+                50-jarig bestaan had gevierd, is zwaar getroffen. Met man en macht is men bezig de dreiging van 
+                instorting te voorkomen.”
+                </p>
+            </div>
+            <div class="jaartallen-grid"></div>
+            <div class="nav-buttons">
+                <a class="nav-button previous" data-page="8.1">Vorige</a>
+                <a class="nav-button next" data-page="9.1">Volgende</a>
+            </div>
+        </div>
+
+        <div id="page-9.1" class="page" data-title="Punt 9">
+            <div class="instruction-box">
+                <h2>Ga naar punt 9</h2>
+                <img src="../icons/Route.png" alt="Route">
+                <p>Steek op het zebrapad links de Oosterkerkstraat over en ga meteen rechtdoor naar de Maalderijstraat
+                langs de Meelfabriektuin, tot je aan je rechterhand een bruggetje naar het Ankerpark treft. Loop het 
+                Ankerpark door tot je bij het einde van het park komt met links de Binnenoostsingelbrug en rechtdoor 
+                de Loviumbrug.
+                </p>
+            </div>
+            <div class="jaartallen-grid"></div>
+            <div class="nav-buttons">
+                <a class="nav-button previous" data-page="8.2">Vorige</a>
+                <a class="nav-button next" data-page="9.2">Volgende</a>
+            </div>
+        </div>
+
+        <div id="page-9.2" class="page" data-title="Vraag 9">
+            <div class="intro-box">
+                <h2>Ankerpark</h2>
+                <p class="center">Punt 9/12</p>
+                <p>“Weer zie ik overal grote fabriekshallen van baksteen en staal, maar dit keer voelt het 
+                moderner. Ik sta aan de waterkant, waar veel schepen vastliggen aan de kade. Op het terrein 
+                staat het vol met vrachtwagens en stapels metaal. Je hoort het geluid van hamers, motoren 
+                en slijpwerk, en de lucht is zwaar om in te ademen door alle olie, ijzer en rook. Toch is 
+                het niet heel druk. Ik loop langs grote borden met afbeeldingen vol groen en recreatie van 
+                omgevingsarchitecten over hoe deze plek er over enkele jaren uit moet komen te zien. 
+                Arbeiders praten over een demonstratie die hier morgen zal plaatsvinden tegen de sloop van 
+                De Grof aankomende januari.”
+                </p>
+            </div>
+            <div class="jaartallen-grid"></div>
+            <div class="nav-buttons">
+                <a class="nav-button previous" data-page="9.1">Vorige</a>
+                <a class="nav-button next" data-page="10.1">Volgende</a>
+            </div>
+        </div>
+
+        <div id="page-10.1" class="page" data-title="Punt 10">
+            <div class="instruction-box">
+                <h2>Ga naar punt 10</h2>
+                <img src="../icons/Route.png" alt="Route">
+                <p>Ga rechtdoor over de Loviumbrug, loop langs de Zijlpoort en vervolg door de groene 
+                hekken. Ga een stukje rechtdoor en loop vervolgens met het pad mee naar links. Steek het 
+                bruggetje over naar het Blekerspark en loop door het park met het water aan je rechterhand. 
+                Eenmaal uit het park, steek het zebrapad over en vervolg je weg over de loopbrug tot je aan de 
+                overkant bent.
+                </p>
+            </div>
+            <div class="jaartallen-grid"></div>
+            <div class="nav-buttons">
+                <a class="nav-button previous" data-page="9.2">Vorige</a>
+                <a class="nav-button next" data-page="10.2">Volgende</a>
+            </div>
+        </div>
+
+        <div id="page-10.2" class="page" data-title="Vraag 10">
+            <div class="intro-box">
+                <h2>Huigpark</h2>
+                <p class="center">Punt 10/12</p>
+                <p>“Ik weet niet waar ik ben, maar ik hoorde een hoop bedrijvigheid in de straat achter mij. 
+                Na het inslaan van een stoffig straatje liep ik toevallig langs een 
+                koffiehuis waar iemand zijn courant had achtergelaten. Ik zal je proberen voor te lezen wat er staat: 
+                <br><br>‘Wordt bericht, dat binnen dese stad voortgangh wordt gemaeckt met het uitbreiden der wallen 
+                ende singelen, alwaer men nieuwe grachten uytgraeft ende gronden ophooght, om de toename der 
+                inwoonders te kunnen bevatten; ende wordt gemeldt dat men met groote neerstigheyt arbeijdt aen de 
+                oprichtinghe van het Armen-Bolwerck aen de noordt-sijde der stadt. Men verneemt voorts uyt ’s Lands 
+                vergaderinge, dat den bestandt met den Koningh van Spangien noch staende blijft, hoewel niet sonder 
+                mistrouwen, alsoo beyde partien haer krijghsmacht in goeden staet houden. In dese stadt is de handel 
+                in laken ende saeyen noch levendig, ende de universiteyt blijft in bloeyende staet, alwaer men menighte 
+                studenten uyt vreemde landen ontfangt. Soo is de stadt in ruste, doch niet sonder oplettinge op de 
+                loopende saecken des oorlogs.’”
+                </p>
+            </div>
+            <div class="jaartallen-grid"></div>
+            <div class="nav-buttons">
+                <a class="nav-button previous" data-page="10.1">Vorige</a>
+                <a class="nav-button next" data-page="11.1">Volgende</a>
+            </div>
+        </div>
+
+        <div id="page-11.1" class="page" data-title="Punt 11">
+            <div class="instruction-box">
+                <h2>Ga naar punt 11</h2>
+                <img src="../icons/Route.png" alt="Route">
+                <p>Vervolg het pad door het Huigpark. Steek het fietspad over en ga aan het eind 
+                van het park over de brug rechts. Sla aan de overkant linksaf. Loop over de Maresingel 
+                met het water aan je linkerhand. Steek bij het kruispunt het zebrapad over om rechtsaf de 
+                Van Der Pauwkade in te gaan. Neem het pad links tussen de twee grote witte bouwcomplexen 
+                door. Stop zodra je voorbij het eerste bakstenen gebouw bent.
+                </p>
+            </div>
+            <div class="jaartallen-grid"></div>
+            <div class="nav-buttons">
+                <a class="nav-button previous" data-page="10.2">Vorige</a>
+                <a class="nav-button next" data-page="11.2">Volgende</a>
+            </div>
+        </div>
+
+        <div id="page-11.2" class="page" data-title="Vraag 11">
+            <div class="intro-box">
+                <h2>Slachthuispark Nieuw Leyden</h2>
+                <p class="center">Punt 11/12</p>
+                <p>“Wat een stank! Een zware mestgeur hangt hier en volgens mij heb ik net in de poep gestaan. 
+                Alle weggetjes die hier zijn liggen vol poep van voorbijgaande paarden, koeien, schapen en 
+                ander vee. Soms komen ze via loopplanken uit de schuiten gelopen, maar verderop zie ik ook veel 
+                open stukken grond en weilanden. Ik sta bij het hek dat letterlijk de scheidslijn vormt tussen 
+                de stad en het platteland. Momenteel worden twee elektrische lantaarns bovenop de bakstenen 
+                muren aan weerszijden van de poort geplaatst, maar zelfs de installateur heeft moeite om de 
+                vliegen van zich af te slaan.”
+                </p>
+            </div>
+            <div class="jaartallen-grid"></div>
+            <div class="nav-buttons">
+                <a class="nav-button previous" data-page="11.1">Vorige</a>
+                <a class="nav-button next" data-page="12.1">Volgende</a>
+            </div>
+        </div>
+
+        <div id="page-12.1" class="page" data-filename="Leiden-L1-singel-mm-12punt.html" data-title="Punt 12">
+            <div class="instruction-box">
+                <h2>Ga naar punt 12</h2>
+                <img src="../icons/Route.png" alt="Route">
+                <p>Volg het pad om het park te verlaten bij de Pasteurstraat. Sla linksaf, steek de Maresingel over en
+                ga vervolgens rechtsaf om je weg langs de Maresingel te vervolgen. Houd het water aan je linkerhand tot
+                je bij het kruispunt komt. Ga hier linksaf de Heen-en-Weerbrug over en sla rechtsaf en vervolg je weg 
+                over de Marepoortkade. Loop na de kade in een directe lijn naar de molen over het Lammermarktplein. 
+                </p>
+            </div>
+            <div class="jaartallen-grid"></div>
+            <div class="nav-buttons">
+                <a class="nav-button previous" data-page="11.2">Vorige</a>
+                <a class="nav-button next" data-page="12.2">Volgende</a>
+            </div>
+        </div>
+
+        <div id="page-12.2" class="page" data-title="Vraag 12">
+            <div class="intro-box">
+                <h2>Lammermarkt</h2>
+                <p class="center">Punt 12/12</p>
+                <p>“Dit is wel heel bijzonder. Ik zie mannen in lange wollen jassen en driehoekige hoeden, 
+                net liep er zelfs een man met een witte pruik. Vrouwen lopen hier in wijde rokken en er 
+                klinkt geroep van verkopers die prijzen noemen in stuivers, terwijl ernaast met ganzenveren 
+                in kleine boekjes wordt geschreven. Ik hoor discussies over belastingen op graan en wol. 
+                Aan de rand van het plein staat een herberg waar luidruchtig wordt gezongen. Daarachter zie 
+                ik boven de stadsmuren de wieken van vele windmolens draaien die hier op en langs de wallen 
+                staan. Net zag ik op het bord van een bakkerskraampje dat zijn brood kwam van de nieuwste 
+                molen van de stad, slechts twee jaar geleden geopend en alweer de 19e van de stad.”
+                </p>
+            </div>
+            <div class="jaartallen-grid"></div>
+            <div class="nav-buttons">
+                <a class="nav-button previous" data-page="12.1">Vorige</a>
+                <a class="nav-button next" data-page="99">Volgende</a>
+            </div>
+        </div>
+
+        <div id="page-99" class="page" data-title="Vraag 12">
+            <div class="intro-box">
+                <h2>Poging wagen?</h2>
+                <p class="center"></p>
+                <p>Zorg dat je alle jaartallen hebt ingevuld en druk dan op de knop. Dit is je enige kans om
+                de tijdreiziger terug te halen. Hij moet zich in een van de twaalf locaties bevinden, als die
+                maar het juiste jaartal heeft...
+                </p>
+            </div>
+            <div class="jaartallen-grid"></div>
+            <button id="timeFinalButton" class="final-button" disabled>ONTKNOPING</button>
+            <div class="nav-buttons">
+                <a class="nav-button previous" data-page="12.2">Vorige</a>
+            </div>
+        </div>
+
+        <div id="page-100" class="page" data-title="Helaas!">
+            <div class="result-box">
+                <h2>Resultaat</h2>
+                <p class="center">
+                Helaas! De deuren openden maar de tijdmachine was leeg. De tijdreiziger bevond zich in een ander jaar.</p>
+            </div>
+        <div class="jaartallen-grid"></div>
+            <a href="../leiden-wandelroutes.html" id="closeGameButton" class="back-button">Spel sluiten</a>
+        </div>
+
+        <div id="page-101" class="page" data-title="Gefeliciteerd!">
+            <div class="result-box">
+                <h2>Resultaat</h2>
+                <p class="center">
+                Geweldig gedaan! De tijdreiziger is veilig en wel uit de tijdmachine gekomen.</p>
+            </div>
+            <div class="jaartallen-grid"></div>
+            <br>
+            <a href="../leiden-wandelroutes.html" id="closeGameButton" class="back-button">Spel sluiten</a>
+        </div>
+    </div>
+    
+    <script src="Leiden-Lsingel-script-tijdreiziger.js"></script>
+    <script src="../script.js"></script>
+
+</body>
+</html>
