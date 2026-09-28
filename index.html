@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stadsavontouren</title>
+    <link rel="stylesheet" href="style-index.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Stadstouren vol Stadsavontouren</h1>
+
+        <div class="welkombox">
+            <h2>Welkom!</h2>
+            <p>Ontdek verborgen parels aan de hand van de leukste spelroutes:
+            van moordmysteries tot puzzeltochten.<br><br>
+            Kies een plaats en maak vervolgens je keuze voor vaar- of wandelroutes.
+            </p>
+        </div>
+
+        <div class="city-selector">
+            <div class="city-button" data-city="Leiden" data-boat="leiden-vaarroutes.html" data-walk="leiden-wandelroutes.html">
+                Leiden
+            </div>
+            <div class="binnenkort-button">Binnenkort</div>
+        </div>
+
+        <p id="errorMessage" class="error"></p>
+
+        <div class="button-container">
+            <button id="boatBtn" class="route-btn">Vaarroutes</button>
+            <button id="walkBtn" class="route-btn">Wandelroutes</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
