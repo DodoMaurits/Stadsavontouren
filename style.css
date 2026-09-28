@@ -1,0 +1,843 @@
+body {
+    background: #0d1e3a;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+@media (max-width: 900px) {
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding-top: 20px;
+        min-height: auto;
+    }
+}
+
+.container {
+    width: 90%;
+    max-width: 500px;
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+}
+
+@keyframes reveal {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+    0%   { box-shadow: 0 0 0 0 rgba(176, 0, 32, 0.6); }
+    70%  { box-shadow: 0 0 0 10px rgba(176, 0, 32, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(176, 0, 32, 0); }
+}
+
+/* --------------- 1. OVERZICHTSPAGINA ROUTES --------------- */
+/* ----- BUTTON TERUG ----- */
+.back-button {
+    display: block;
+    width: fit-content;
+    margin: 0 auto 20px auto;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: 600;
+    background: #7A1C1C;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    text-decoration: none;
+}
+
+.back-button:hover {
+    background: #e5e7eb;
+    color: #111;
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+
+.back-button:active {
+    transform: translateY(0);
+    text-decoration: none;
+}
+
+/* ----- TITEL BOVEN ROUTES ----- */
+h1 {
+    margin-bottom: 30px;
+}
+
+/* ----- GRID ROUTE-OPTIES ----- */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 200px);
+    gap: 20px;
+    justify-content: center;
+    margin: 0 auto;
+}
+@media (max-width: 900px) {
+    .grid {
+        grid-template-columns: repeat(2, 140px);
+        gap: 15px;
+    }
+}
+
+.grid-item {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+    aspect-ratio: 1 / 1;
+    padding: 15px;
+    box-sizing: border-box;
+}
+@media (max-width: 900px) {
+    .grid-item {
+        padding: 10px;
+    }
+}
+
+.grid-item:hover {
+    transform: scale(1.05);
+    background: rgba(0, 230, 118, 0.2);
+}
+
+.grid-item-disabled {
+    background: rgba(0, 0, 0, 0.5);
+    color: #666;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1 / 1;
+    padding: 15px;
+    box-sizing: border-box;
+    font-style: italic;
+    cursor: not-allowed;
+}
+@media (max-width: 900px) {
+    .grid-item {
+        padding: 10px;
+    }
+}
+
+.number {
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+@media (max-width: 900px) {
+    .number { font-size: 35px; }
+}
+
+.title {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.2;
+}
+@media (max-width: 900px) {
+    .title { font-size: 14px; }
+}
+
+/* ----- OVERLAY FUNCTIE ----- */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s;
+    z-index: 1000;
+}
+
+.overlay.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+@media (max-width: 900px) {
+    .overlay.visible {
+        width: calc(100% - 32px);
+        padding: 20px 16px;
+    }
+}
+
+/* ----- OVERLAY BERICHT ----- */
+.modal {
+    background: white;
+    padding: 30px 20px 20px 20px;
+    border-radius: 12px;
+    max-width: 350px;
+    width: 90%;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.modal h2 {
+    margin-top: 0;
+    font-size: 22px;
+    color: #111;
+}
+
+.modal p {
+    color: #333;
+    margin: 15px 0 0 0;
+}
+
+/* ----- KRUISJE OVERLAY SLUITEN ----- */
+.overlay-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* ----- BUTTON INFO ----- */
+.info-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #7A1C1C;
+    color: white;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+/* ----- BUTTON START ----- */
+.start-button {
+    display: inline-block;
+    background: #7A1C1C;
+    color: white;
+    text-decoration: none;
+    box-sizing: border-box;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    margin-top: 20px;
+    transition: background 0.2s, transform 0.15s;
+}
+
+.start-button:hover {
+    background: #a62828;
+    transform: translateY(-2px);
+}
+
+.start-button:active {
+    transform: translateY(0);
+}
+
+/* --------------- 2. SPEL --------------- */
+/* ----- COMBINATIEPAGINA ----- */
+.page { display: none; }
+.page.active { display: block; }
+        
+#page-content-wrapper {
+width: 100%;
+margin-bottom: 0;
+}
+
+#globalElements {
+width: 100%;
+display: flex;
+flex-direction: column;
+align-items: center;
+margin-top: 0;
+}
+
+/* ----- TOP-ROW LAYOUT ----- */
+.top-row {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+}
+
+.page[data-title="Helaas!"] .top-row,
+.page[data-title="Gefeliciteerd!"] .top-row {
+    display: none;
+}
+
+/* ----- TOP-ROW NOTITIES ----- */
+.notes-button {
+    width: 35px;
+    height: 35px;
+    margin-right: 30px;
+    border: none;
+    border-radius: 8px;
+    background-color: #0c8a4b;
+    color: white;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+}
+
+.notes-button:hover {
+    background: #e5e7eb;
+    color: #111;
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+
+.notes-button:active {
+    transform: translateY(0);
+    text-decoration: none;
+}
+
+.notes-modal {
+    display: flex;
+    flex-direction: column;
+    max-width: 85vh;
+    overflow: hidden;
+}
+
+#notesArea {
+    width: 100%;
+    height: 60dvh;
+    max-height: 600px;
+    box-sizing: border-box;
+    padding: 12px;
+    resize: vertical;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+@media (max-width: 900px) {
+    #notesArea {
+        width: 95%;
+    }
+}
+
+.save-button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background: #0c8a4b;
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+}
+
+.save-button:hover {
+    background: #0fae5c;
+    transform: translateY(-2px);
+}
+
+#notesSave {
+    display: block;
+    width: fit-content;
+    margin: 0 auto 20px auto;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: 600;
+    background: #00e676;
+    color: #071225;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    text-decoration: none;
+}
+
+#notesSave:hover {
+    background: #e5e7eb;
+    color: #111;
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+
+#notesSave:active {
+    transform: translateY(0);
+    text-decoration: none;
+}
+
+/* ----- TOP-ROW TIMER ----- */
+.timer {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background: rgba(255,255,255,0.1);
+    padding: 6px 12px;
+    border-radius: 8px;
+    min-width: 70px;
+    text-align: center;
+}
+
+/* ----- TOP-ROW BUTTON SLUITEN ----- */
+.home-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: right; 
+    width: 35px;
+    height: 35px;
+    background-color: #7A1C1C;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    text-decoration: none;
+}
+
+.home-button:hover {
+    transform: translateY(-2px);
+    background-color: #e5e7eb;
+    color: #111;
+    text-decoration: none;
+}
+
+.home-button:active {
+    transform: translateY(0);
+}
+
+#homeConfirm, #homeCancel {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    padding: 12px 0;
+    box-sizing: border-box;
+}
+
+/* ----- BUTTONS VORIGE/VOLGENDE ----- */
+.nav-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    width: 100%;
+    margin: 30px auto 20px;
+    padding: 0;
+}
+
+.nav-button {
+    width: 120px;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+}
+
+.nav-button:hover {
+    background: rgba(0, 230, 118, 0.2);
+    color: #111;
+    text-decoration: none;
+    transform: translateY(-2px);
+    cursor: pointer;
+}
+
+/* ----- BOX INTRODUCTIE & VRAGEN ----- */
+.intro-box {
+    background-color: rgba(0, 0, 0, 0.85);
+    padding: 20px 20px;
+    margin: 20px auto;
+    max-width: 500px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    text-align: left;
+    color: white;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+@media (max-width: 900px) {
+    .intro-box {
+        font-size: 0.75rem;
+    }
+}
+
+.intro-box h2 {
+    margin-top: 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.center {
+    text-align: center;
+}
+
+/* ----- BOX INSTRUCTIES ----- */
+.instruction-box {
+    width: 280px;
+    height: 280px;
+    margin: 15px auto 20px auto;
+    padding: 12px 14px;
+    background-color: #cfe8ff;
+    color: #0f2a44;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+@media (max-width: 900px) {
+    .instruction-box {
+        width: 220px;
+        height: 220px;
+        font-size: 0.7rem;
+    }
+}
+
+.instruction-box img {
+    width: 50px;
+    height: auto;
+    object-fit: contain;
+}
+@media (max-width: 900px) {
+    .instruction-box img {
+        width: 40px;
+        height: auto;
+    }
+}
+
+/* ----- VRAAG MET INVOERVELD ----- */
+.input-wrapper {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px auto 0;
+}
+
+#searchInput {
+    width: 85%;
+    max-width: 500px;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+    box-sizing: border-box;
+}
+
+input::placeholder {
+    color: #888;
+}
+
+.answer-input,
+#finalAnswerInput {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    height: 15px;
+    padding: 18px 20px;
+    margin: 0 auto 20px;
+    font-size: 14px;
+    border-radius: 8px;
+    border: 4px solid transparent;
+    outline: none;
+    box-sizing: border-box;
+    background: #ffffff;
+    color: #111;
+    text-align: left;
+    transition: border 0.2s, box-shadow 0.2s;
+}
+
+.answer-input:focus,
+#finalAnswerInput:focus {
+    border-color: white;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.25);
+}
+
+.answer-input::placeholder,
+#finalAnswerInput::placeholder {
+    color: #999;
+}
+
+.error {
+    color: #ff6a6a;
+    font-style: italic;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+/* ----- VERDACHTENGRID ----- */
+.verdachten-grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4px;
+    width: 100%;
+    justify-content: center;
+    max-width: 400px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.verdachte {
+    aspect-ratio: 3 / 4;
+    height: auto;
+    border: 2px solid green;
+    border-radius: 2px;
+    color: white;
+    font-size: 0.75rem;
+    background-color: #03002A;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    gap: 2px;
+    padding: 4px;
+    transition: all 0.2s ease;
+}
+@media (max-width: 900px) {
+    .verdachte {
+        font-size: 0.65rem;
+        padding: 2px;
+        background-size: 45% auto;
+    }
+}
+
+.verdachte img {
+    width: 50%;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+@media (max-width: 900px) {
+    .verdachte img {
+        widh: 55%;
+    }
+}
+
+.verdachte p {
+    text-align: center;
+    margin: 0;
+}
+
+.verdachte.afgestreept {
+  border-color: #c40000;
+  color: #c40000;
+  background-color: #2a0000;
+}
+
+/* ----- JAARTALLENGRID ----- */
+.jaartallen-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    justify-items: center;
+    margin: 20px auto;
+    max-width: 420px;
+}
+@media (max-width: 900px) {
+    .jaartallen-grid { gap: 10px; }
+}
+
+.jaartal-cirkel {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid #7A1C1C;
+    background: #03002A;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+
+    outline: none;
+    transition: all 0.2s ease;
+}
+@media (max-width: 900px) {
+    .jaartal-cirkel { width: 65px; height: 65px; font-size: 16px; }
+}
+
+.jaartal-cirkel::placeholder {
+    color: rgba(255,255,255,0.4);
+}
+
+.jaartal-cirkel.editing {
+    border-color: #ffd700; /* geel */
+}
+
+.jaartal-cirkel.filled {
+    border-color: white;
+}
+
+.jaartal-cirkel:focus {
+    box-shadow: 0 0 10px rgba(255,255,255,0.25);
+}
+
+
+/* ----- BUTTON ONTKNOPING ----- */
+.final-button {
+    width: 300px;
+    padding: 16px 0;
+    margin-top: 25px;
+    background: #b00020;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.1s ease, opacity 0.2s;
+}
+
+.final-button:not(:disabled):hover {
+    background: #d0002a;
+    transform: translateY(-1px);
+}
+
+.final-button:not(:disabled):active {
+    transform: translateY(0);
+}
+
+.final-button:disabled {
+    background: #5a5a5a;
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.final-button:focus {
+    outline: none;
+}
+
+.final-button:not(:disabled) {
+    animation: pulse 1.5s infinite;
+}
+
+/* ----- BOX RESULTAAT MOORDMYSTERIE ----- */
+.result-box {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 40px 45px;
+    background: linear-gradient(145deg, #1e1e1e, #2a2a2a);
+    border-radius: 18px;
+    color: #f5f5f5;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    border: 2px solid #c9a94a;
+    position: relative;
+    animation: reveal 1s ease-out;
+}
+
+.result-box::before {
+    content: "✔ OPGELOST";
+    position: absolute;
+    top: -14px;
+    right: 30px;
+    background: #c9a94a;
+    color: #1a1a1a;
+    padding: 6px 14px;
+    font-weight: bold;
+    font-size: 0.8rem;
+    border-radius: 20px;
+    letter-spacing: 1px;
+}
+
+.result-box h2 {
+    font-family: Georgia, serif;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #ffd86b;
+    text-align: center;
+}
+
+.result-box h2:nth-of-type(2) {
+    margin-top: 40px;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    border-top: 1px solid #555;
+    border-bottom: 1px solid #555;
+    padding: 12px 0;
+    color: #ffffff;
+}
+
+.result-box p {
+    line-height: 1.7;
+    font-size: 1.05rem;
+    margin-top: 15px;
+    color: #e0e0e0;
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    word-break: normal;
+}
+
+/* ----- RESULTAAT TIJDREIZIGER ----- */
+.jaartal-result {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #03002A;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: 4px solid;
+}
+@media (max-width: 900px) {
+    .jaartal-result { width: 65px; height: 65px; font-size: 16px; }
+}
+
+.jaartal-result.correct {
+    border-color: #00c853;
+}
+
+.jaartal-result.incorrect {
+    border-color: #d50000;
+}
+
+.jaartal-result.selected {
+    box-shadow: 0 0 0 6px #ffd700;
+    animation: selectedPulse 1s infinite;
+    transform: scale(1.1);
+    position: relative;
+}
+
+.jaartal-result.selected::after {
+    content: "🎯";
+    position: absolute;
+    top: -12px;
+    right: -6px;
+    font-size: 20px;
+}
+
+@keyframes selectedPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+    100% { transform: scale(1); }
+}
