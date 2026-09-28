@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lopen 7km 3-4 uur Grote Leidse Singelpark</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+
+        <a href="leiden-wandelroutes.html" class="back-button">Terug</a>
+        
+        <h1>Grote Leidse Singelpark</h1>
+        
+        <p>Kies een scenario om te starten:<button id="infoBtn" class="info-button" aria-label="Informatie">i</button></p>
+
+        <div class="grid">
+            <div class="grid-item" data-opt="Leiden-lopen-singel/Leiden-Lsingel-moordmysterie.html" 
+                data-template="LeidenLsingelmm">
+                <div class="number">1</div>
+                <div class="title">Moordmysterie</div>
+            </div>
+            <div class="grid-item" data-opt="Leiden-lopen-singel/Leiden-Lsingel-tijdreiziger.html"
+                data-template="LeidenLsingeltr">
+                <div class="number">2</div>
+                <div class="title">Tijdreiziger</div>
+            </div>
+            <div class="grid-item-disabled" data-opt="Leiden-L1-singel-pt.html"
+                data-template="LeidenLsingelpt">
+                <div class="number">3</div>
+                <div class="title">Puzzeltocht<br>Binnenkort</div>
+            </div>
+            <div class="grid-item-disabled" data-opt="Leiden-L1-singel-sj.html"
+                data-template="LeidenLsingelsj">
+                <div class="number">4</div>
+                <div class="title">Schattenjacht<br>Binnenkort</div>
+            </div>
+        </div>
+    </div>
+        
+    <div id="LeidenLsingelpt" hidden>
+        <h2>Puzzeltocht<br>Grote Leidse Singelpark</h2>
+        <p>Je staat op het punt deze route te starten.</p>
+        <div class="instruction-box">
+            <h2>Beginpunt</h2>
+            <img src="icons/Route.png" alt="Route"><br>
+            ...
+            <br>...
+            <br><br>
+            <b>Kom je aan op Leiden Centraal?</b>
+            ...
+        </div>
+    </div>
+
+    <div id="LeidenLsingelmm" hidden>
+        <h2>Moordmysterie<br>Grote Leidse Singelpark</h2>
+        <p>Je staat op het punt deze route te starten.</p>
+        <div class="instruction-box">
+            <h2>Beginpunt</h2>
+            <img src="icons/Route.png" alt="Route"><br>
+            Wereldmuseum Leiden (Steenstraat 1B)
+            <br>Loop het terrein op en blijf rechts op het plein.
+            <br><br>
+            <b>Kom je aan op Leiden Centraal?</b>
+            Loop via de voorkant 300 meter rechtdoor en sla over de brug bij Café Abel rechtsaf
+            om op het terrein van het Wereldmuseum te komen.
+        </div>
+    </div>
+
+    <div id="LeidenLsingelsj" hidden>
+        <h2>Schattenjacht<br>Grote Leidse Singelpark</h2>
+        <p>Je staat op het punt deze route te starten.</p>
+        <div class="instruction-box">
+            <h2>Beginpunt</h2>
+            <img src="icons/Route.png" alt="Route"><br>
+            ...
+            <br>...
+            <br><br>
+            <b>Kom je aan op Leiden Centraal?</b>
+            ...
+        </div>
+    </div>
+
+    <div id="LeidenLsingeltr" hidden>
+        <h2>Tijdreiziger<br>Grote Leidse Singelpark</h2>
+        <p>Je staat op het punt deze route te starten.</p>
+        <div class="instruction-box">
+            <h2>Beginpunt</h2>
+            <img src="icons/Route.png" alt="Route"><br>
+            Wereldmuseum Leiden (Steenstraat 1B)
+            <br>Loop het terrein op en blijf aan de rechterkant van het plein.
+            <br><br>
+            <b>Kom je aan op Leiden Centraal?</b>
+            Loop via de voorkant 300 meter rechtdoor en sla over de brug bij Café Abel rechtsaf
+            om op het terrein van het Wereldmuseum te komen.
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+    
+</body>
+</html>
