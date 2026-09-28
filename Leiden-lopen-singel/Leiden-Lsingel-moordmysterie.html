@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leiden Singel Moordmysterie</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body class="spelpagina">
+
+    <div class="container">
+        <div id="page-0" class="page" data-title="Introductie">
+            <div class="intro-box">
+                <h2>Introductie</h2>
+                <p>Je bent gevraagd als rechercheur om een historische cold case uit <b>1903</b> opnieuw te onderzoeken.
+                Aanleiding is de opening van een nieuwe archiefkamer met foto's en kranten uit die tijd.
+                <br/><br/>Op een ochtend om <b>05:13</b> had de boomverzorger van het <b>Plantsoenpark</b> melding gemaakt van
+                een lichaam in de struiken. Het bleek burgemeester <b>François Was</b>. Een grote schokgolf ging door de stad. 
+                <br/><br/>Uiteindelijk zijn er 8 verdachten verhoord. Het lijstje houd je bij en blijft zichtbaar gedurende de route. 
+                Aan jou de taak om de moordenaar en het moordwapen te achterhalen.
+                </p>
+            </div>
+            <div class="verdachten-grid-container"></div>
+            <div class="nav-buttons">
+                <a class="nav-button next" data-page="1" id="startTimerButton">Start de tijd</a>
+            </div>
+        </div>
+
+        <div id="page-1" class="page" data-title="Vraag 1">
+            <div class="intro-box">
+                <h2>Het moordwapen</h2>
+                <p class="center">Punt 1/15. Locatie: Wereldmuseum</p>
+                <p>Het moordwapen bevindt zich tussen een van de hier ter plekke tentoongestelde objecten.
+                Uit nieuw <b>DNA-onderzoek</b> naar overblijfselen uit die tijd, blijkt dat sommige materialen 
+                sporen van de burgemeester bevatten.<br/><br/>
+                De resultaten zijn binnen. DNA is onder meer gevonden op een stuk <b>gips</b> van Belgische makelij, 
+                een <b>roestvrij staal lemmet</b>, en geverfd <b>hout</b>. Noteer de 3 potentiële moordwapens door 
+                op het potloodje linksboven te klikken.
+                </p>
+            </div>
+            <div class="verdachten-grid-container"></div>
+            <div class="nav-buttons">
+                <a class="nav-button previous" data-page="0">Vorige</a>
+                <a class="nav-button next" data-page="2.1">Volgende</a>
+            </div>
+        </div>
+
+        <div id="page-2.1" class="page" data-title="Punt 2">
+            <div class="instruction-box">
+                <h2>Ga naar punt 2</h2>
+                <img alt="Route" src="../icons/Route.png"/><br/>
+                <p>Houd het water aan je rechterhand en loop om het museum heen met de bocht mee naar links.
+                Loop rechtdoor tot je voor stadspoort de Morspoort staat.</p>
+            </div>
+            <div class="verdachten-grid-container"></div>
+            <div class="nav-buttons">
+                <a class="nav-button previous" data-page="1">Vorige</a>
+                <a class="nav-button next" data-page="2.2">Volgende</a>
+            </div>
+        </div>
+
+        <div id="page-2.2" class="page" data-title="Vraag 2">
+            <div class="intro-box">
+                <h2>Alibi</h2>
+                <p class="center">Punt 2/15. Locatie: Morspoort</p>
+                <p>Een van de verdachten bevond zich in de Morspoort toen de moord gepleegd werd.
+                Kan jij aan de hand van de functie van de poort achterhalen wie in de poort aanwezig was
+                en dus de moord niet gepleegd kon hebben?<br/><br/>
+                Klik op een verdachte om uit te sluiten.
+                </p>
+            </div>
+            <div class="verdachten-grid-container"></div>
+            <div class="nav-buttons">
+                <a class="nav-button previous" data-page="2.1">Vorige</a>
+                <a class="nav-button next" data-page="3.1">Volgende</a>
+            </div>
+        </div>
+
+        <div id="page-3.1" class="page" data-title="Punt 3">
+            <div class="instruction-box">
+                <h2>Ga naar punt 3</h2>
+                <img alt="Route" src="../icons/Route.png"/>
+                <p>Loop verder langs het water om het gebouw naar Park De Put. 
+                Loop het park door tot voorbij de molen en kijk uit over het water vanaf de witte ophaalbrug.</p>
+            </div>
+            <div class="verdachten-grid-container"></div>
+            <div class="nav-buttons">
+                <a class="nav-button previous" data-page="2.2">Vorige</a>
+                <a class="nav-button next" data-page="3.2">Volgende</a>
+            </div>
+        </div>
+
+        <div id="page-3.2" class="page" data-title="Vraag 3">
+            <div class="intro-box">
+                <h2>Informatie</h2>
+                <p class="center">Punt 3/15. Locatie: Rembrandtbrug</p>
+                <p>In het nieuwe archief wordt verwezen naar een journalist met de initialen P.J.T. 
+                die kort na de moord met enkele aanwezigen zou hebben gesproken. Zo ook de portier, 
+                die als militair in tijdelijke burgerdienst de wacht had gehouden voor de concertzaal.
+                Kan jij de achternaam van de journalist achterhalen om zijn verslag te vinden?
+                </p>
+            </div>
+            <div class="input-wrapper">
+                <input autocomplete="off" data-answer="Troelstra" class="answer-input" placeholder="Type je antwoord en druk op enter" type="text"/>
+                <p class="error" id="answerError" style="display:none;">
+                Helaas! Dit is niet het goede antwoord.
+                </p>
+            </div>
+            <div hidden="" id="antwoordClue">
+                <h2 style="font-weight: bold; margin-bottom: 10px; text-align: center;">Heel goed!</h2>
+                <p>Uit het verslag blijkt dat de boomverzorger de burgemeester had gevonden 
+                door de afdrukken van schoenen in de aarde te volgen, 
+                die naar de struiken toe liepen. Ook vond hij een handschoen, 
+                vermoedelijk van de schoonmaker van het zwanenbassin.
+                <br/><br/>De burgemeester was de avond ervoor in de concertzaal.
+                Daar was hij voor het laatst gezien door de portier die, zoals gezegd,
+                daar dienst deed als militair in tijdelijke burgerdienst.
+                </p>
+            </div>
+            <div class="verdachten-grid-container"></div>
+            <div class="nav-buttons">
+                <a class="nav-button previous" data-page="3.1">Vorige</a>
+                <a class="nav-button next" data-page="4.1">Volgende</a>
+            </div>
+        </div>
+
+        <div id="page-4.1" class="page" data-title="Punt 4">
+            <div class="instruction-box">
+                <h2>Ga naar punt 4</h2>
+                <img alt="Route" src="../icons/Route.png"/>
+                <p>Loop rechtdoor over de Rembrandtbrug en sla aan de overkant rechtsaf naar het Rembrandtplein.</p>
+            </div>
+            <div class="verdachten-grid-container"></div>
+            <div class="nav-buttons">
+                <a class="nav-button previous" data-page="3.2">Vorige</a>
+                <a class="nav-button next" data-page="4.2">Volgende</a>
+            </div>
+        </div>
+
+        <div id="page-4.2" class="page" data-title="Vraag 4">
+            <div class="intro-box">
+                <h2>Brief</h2>
+                <p class="center">Punt 4/15. Locatie: Rembrandtpleintje</p>
+                <p>Hm… het verslag noemt ook een anonieme dreigbrief aan de burgemeester over zijn beleid, daterend
+                van elke maanden voor de moord. Om de brief te vinden heb je een steekwoord nodig. Kan jij de naam achterhalen
+                van het bedrijf waarover de burgemeester een controversiële uitbreiding had goedgekeurd?
+                </p>
+            </div>
+            <div class="input-wrapper">
+                <input autocomplete="off" data-answer="Rotogravure" class="answer-input" placeholder="Type je antwoord en druk op enter" type="text"/>
+                <p class="error" id="answerError" style="display:none;">
+                Helaas! Dit is niet het goede antwoord.
+                </p>
+            </div>
+            <div aria-hidden="true" class="overlay" id="infoOverlay">
+                <div class="modal">
+                    <button class="modal-close" id="infoClose2">✕</button>
+                    <h2 style="font-weight: bold; margin-bottom: 10px; text-align: center;">Klasse!</h2>
+                    <p>De brief bevat een doodsbedreiging aan de burgemeester, 
+                    omdat hij naar verluidt gebouwen wilde slopen ten koste van de cultuur in de stad.
+                    </p>
+                </div>
+            </div>
+            <div class="verdachten-grid-container"></div>
+            <div class="nav-buttons">
+                <a class="nav-button previous" data-page="4.1">Vorige</a>
+                <a class="nav-button next" data-page="5.1">Volgende</a>
+            </div>
+        </div>
+
+        <div id="page-5.1" class="page" data-title="Punt 5">
+            <div class="instruction-box">
+                <h2>Ga naar punt 5</h2>
+                <img alt="Route" src="../icons/Route.png"/>
+                <p>Houd het water aan je rechterhand en neem de bocht naar links door het parkje.
+                <br/>Steek vervolgens de weg over en loop rechtdoor onder het gebouw door om het Singelpark te vervolgen.
+                <br/>Ga aan het eind van het park over het bruggetje en neem de trap, totdat je je in de speeltuin bevindt.</p>
+            </div>
+            <div class="verdachten-grid-container"></div>
+            <div class="nav-buttons">
+                <a class="nav-button previous" data-page="4.2">Vorige</a>
+                <a class="nav-button next" data-page="5.2">Volgende</a>
+            </div>
+        </div>
+
+        <div id="page-5.2" class="page" data-filename="Leiden-L1-singel-mm-5vraag.html" data-title="Vraag 5">
+            <div class="intro-box">
+                <h2>Alibi</h2>
+                <p class="center">Punt 5/15. Locatie: Speeltuin</p>
+                <p>Een van de verdachten bevond zich in zijn verblijfplaats aan de rand van het plein toen de moord gepleegd werd. 
+                Kan jij aan de hand van het beroep en deze historische locatie achterhalen wie hier verbleef? 
+                Kijk goed rond.
+                </p>
+            </div>
+            <div class="verdachten-grid-container"></div>
+            <div class="nav-buttons">
+                <a class="nav-button previous" data-page="5.1">Vorige</a>
+                <a class="nav-button next" data-page="6.1">Volgende</a>
+            </div>
+        </div>
+
+        <div id="page-6.1" class="page" data-title="Punt 6">
+            <div class="instruction-box">
+                <h2>Ga naar punt 6</h2>
+                <img alt="Route" src="../icons/Route.png"/>
+                <p>Loop met je rug naar het water rechts het plein af en ga rechtdoor.
+                Blijf op de Arsenaalstraat tot je bij de gracht van Sebastiaansdoelen bent.<br/>
+                Sla daar rechtsaf en loop aan het eind van de straat
+                naar links de poort van de Hortus Botanicus binnen. Loop langs het Grand Café.</p>
+            </div>
+            <div class="verdachten-grid-container"></div>
+            <div class="nav-buttons">
+                <a class="nav-button previous" data-page="5.2">Vorige</a>
+                <a class="nav-button next" data-page="6.2">Volgende</a>
+            </div>
+        </div>
+
+        <div id="page-6.2" class="page" data-title="Vraag 6">
+            <div class="intro-box">
+                <h2>Informatie</h2>
+                <p class="center">Punt 6/15. Locatie: Hortus Botanicus</p>
+                <p>In de dichtbegroeide struiken bij de burgemeester was later die dag ook een kleine verrekijker gevonden. 
+                Deze bleek van de vogelspotter te zijn. 
+                Achterhaal zwart op wit welke verdachte ook werkzaam was bij de Palmenkas van de Hortus Botanicus 
+                en je zult nieuwe informatie vinden.
+                </p>
+            </div>
+            <div class="input-wrapper">
+                <input autocomplete="off" data-answer="De portier,portier,de portier van de concertzaal,portier van de concertzaal" class="answer-input" placeholder="Type je antwoord en druk op enter" type="text"/>
+                <p class="error" id="answerError" style="display:none;">
+                Helaas! Dit is niet het goede antwoord.
+                </p>
+            </div>
+            <div aria-hidden="true" class="overlay" id="infoOverlay">
+                <div class="modal">
+                    <button class="modal-close" id="infoClose2">✕</button>
+                    <h2 style="font-weight: bold; margin-bottom: 10px; text-align: center;">Je bent op dreef!</h2>
+                    <p>Uit meerdere bronnen bleek de vogelspotter regelmatig te vinden te zijn in de Leidse Hortus 
+                    om zijn hobby uit te oefenen. 
+                    Uit een ouder formulier van de Hortus Botanicus blijkt de vogelspotter de verrekijker 
+                    3 dagen voor de moord als vermist te hebben opgegeven.
+                    </p>
+                </div>
+            </div>
+            <div class="verdachten-grid-container"></div>
+            <div class="nav-buttons">
+                <a class="nav-button previous" data-page="6.1">Vorige</a>
+                <a class="nav-button next" data-page="7.1">Volgende</a>
+            </div>
+        </div>
+
+        <div id="page-7.1" class="page" data-title="Punt 7">
+            <div class="instruction-box">
+                <h2>Ga naar punt 7</h2>
+                <img alt="Route" src="../icons/Route.png"/>
+                <p>Loop door de poort van het Academiegebouw het hek uit en sla rechtsaf.
+                Blijf de gracht net zo lang volgen met het water aan je linkerhand, tot je bij het Van der Werfpark komt.
+                Sta in het park stil bij het standbeeld van Van der Werf.</p>
+            </div>
+            <div class="verdachten-grid-container"></div>
+            <div class="nav-buttons">
+                <a class="nav-button previous" data-page="6.2">Vorige</a>
+                <a class="nav-button next" data-page="7.2">Volgende</a>
+            </div>
+        </div>
+
+        <div id="page-7.2" class="page" data-title="Vraag 7">
+            <div class="intro-box">
+                <h2>Envelop</h2>
+                <p class="center">Punt 7/15. Locatie: Van der Werfpark</p>
+                <p>Op post dat achteraf naar de recherche was gezonden staat een over het hoofd geziene aanwijzing. 
+                Kan jij aan de hand van het standbeeld achterhalen waar de post vandaan kwam? 
+                De regio bevond zich in de richting van de kansel.
+                </p>
+            </div>
+            <div class="input-wrapper">
+                <input autocomplete="off" data-answer="Schieland" class="answer-input" placeholder="Type je antwoord en druk op enter" type="text"/>
+                <p class="error" id="answerError" style="display:none;">
+                Helaas! Dit is niet het goede antwoord.
+                </p>
+            </div>
+            <div aria-hidden="true" class="overlay" id="infoOverlay">
+                <div class="modal">
+                    <button class="modal-close" id="infoClose2">✕</button>
+                    <h2 style="font-weight: bold; margin-bottom: 10px; text-align: center;">Perfect!</h2>
+                    <p>In de envelop zitten foto’s van de verdachten. 
+                    Jouw oog valt op de dakloze, om wiens voeten slechts versleten lappen gewikkeld waren.
+                    </p>
+                </div>
+            </div>
+            <div class="verdachten-grid-container"></div>
+            <div class="nav-buttons">
+                <a class="nav-button previous" data-page="7.1">Vorige</a>
+                <a class="nav-button next" data-page="8.1">Volgende</a>
+            </div>
+        </div>
+
+        <div id="page-8.1" class="page" data-title="Punt 8">
+            <div class="instruction-box">
+                <h2>Ga naar punt 8</h2>
+                <img alt="Route" src="../icons/Route.png"/>
+                <p>Loop rechtdoor het park uit en sla meteen rechtsaf om schuin het Garenmarktplein over te steken.
+                Als je aan de overkant van het plein bent, vervolg je weg door de Korevaarstraat tot aan de rotonde.
+                Steek de rotonde over naar het Plantsoen een vervolg je weg door het Singelpark met het water aan je rechterhand
+                tot je links de volière aantreft.<p>
+            </div>
+            <div class="verdachten-grid-container"></div>
+            <div class="nav-buttons">
+                <a class="nav-button previous" data-page="7.2">Vorige</a>
+                <a class="nav-button next" data-page="8.2">Volgende</a>
+            </div>
+        </div>
+
+        <div id="page-8.2" class="page" data-title="Vraag 8">
+            <div class="intro-box">
+                <h2>Informatie</h2>
+                <p class="center">Punt 8/15. Locatie: Volière Plantsoen</p>
+                <p>Het archief van de volière blijkt een schat aan informatie. Zo stuit je op foto's van een jongedame, 
+                die ’s ochtends tijdens haar vaste rondje langs de ganzen met de journalist zou hebben gesproken.
+                Kan jij de achternaam achterhalen van deze persoon om het artikel te vinden? 
+                Kijk goed rond, de volière houdt niks achter.
+                </p>
+            </div>
+            <div class="input-wrapper">
+                <input autocomplete="off" data-answer="Kret-Karsten,Kret,Karsten" class="answer-input" placeholder="Type je antwoord en druk op enter" type="text"/>
+                <p class="error" id="answerError" style="display:none;">
+                Helaas! Dit is niet het goede antwoord.
+                </p>
+            </div>
+            <div aria-hidden="true" class="overlay" id="infoOverlay">
+                <div class="modal">
+                    <button class="modal-close" id="infoClose2">✕</button>
+                    <h2 style="font-weight: bold; margin-bottom: 10px; text-align: center;">Zeker en vast!</h2>
+                    <p>Uit het gesprek bleek dat mevrouw Kret-Karsten een goede band had met de vogelverzorger. 
+                    Ze zei dat hij altijd zo kon mopperen over de vrekkigheid van de burgemeester, 
+                    maar dat na de belofte van de burgemeester om de volière te behouden, zijn toon veranderd was.
+                    </p>
+                </div>
+            </div>
+            <div class="verdachten-grid-container"></div>
+            <div class="nav-buttons">
+                <a class="nav-button previous" data-page="8.1">Vorige</a>
+                <a class="nav-button next" data-page="9.1">Volgende</a>
+            </div>
+        </div>
+
+        <div id="page-9.1" class="page" data-title="Punt 9">
+            <div class="instruction-box">
+                <h2>Ga naar punt 9</h2>
+                <img alt="Route" src="../icons/Route.png"/>
+                <p>Vervolg je weg door het Plantsoen. Houd het water aan je rechterhand net zo lang totdat je het park uit bent.
+                Steek de weg over via het zebrapad en vervolg het pad door het groen tot je Café Plantage treft.
+                Sla rechtsaf de Veerstraat in en stop op het Co-Snookerplein.<p>
+            </div>
+            <div class="verdachten-grid-container"></div>
+            <div class="nav-buttons">
+                <a class="nav-button previous" data-page="8.2">Vorige</a>
+                <a class="nav-button next" data-page="9.2">Volgende</a>
+            </div>
+        </div>
+
+        <div id="page-9.2" class="page" data-title="Vraag 9">
+            <div class="intro-box">
+                <h2>Informatie</h2>
+                <p class="center">Punt 9/15. Locatie: Co-Snookerplein</p>
+                <p>Een van de agenten heeft enkele dagen na de moord iets bijzonders gedaan. 
+                Kan jij de achternaam van deze persoon achterhalen? Zijn kleinzoon zou 100 jaar leven.
+                </p>
+            </div>
+            <div class="input-wrapper">
+                <input autocomplete="off" data-answer="Vrins" class="answer-input" placeholder="Type je antwoord en druk op enter" type="text"/>
+                <p class="error" id="answerError" style="display:none;">
+                Helaas! Dit is niet het goede antwoord.
+                </p>
+            </div>
+            <div aria-hidden="true" class="overlay" id="infoOverlay">
+                <div class="modal">
+                    <button class="modal-close" id="infoClose2">✕</button>
+                    <h2 style="font-weight: bold; margin-bottom: 10px; text-align: center;">Inderdaad!</h2>
+                    <p>Agent Vrins herkende de handschoen die de boomverzorger bij de burgemeester in de struiken had aangetroffen. 
+                    Hijzelf was deze enkele weken geleden kwijtgeraakt na een winterse wandeling.
+                    </p>
+                </div>
+            </div>
+            <div class="verdachten-grid-container"></div>
+            <div class="nav-buttons">
+                <a class="nav-button previous" data-page="9.1">Vorige</a>
+                <a class="nav-button next" data-page="10.1">Volgende</a>
+            </div>
+        </div>
+
+        <div id="page-10.1" class="page" data-title="Punt 10">
+            <div class="instruction-box">
+                <h2>Ga naar punt 10</h2>
+                <img alt="Route" src="../icons/Route.png"/>
+                <p>Loop de steile brug over en ga rechtdoor. 
+                Blijf op de Kaarsenmakersstraat en vervolg het pad door het wandelgebied van het Lakenplein,
+                tot je aan je rechterhand een wit bruggetje ziet. Loop over het bruggetje en betreed Speeltuin De Doorbraak.
+                </p>
+            </div>
+            <div class="verdachten-grid-container"></div>
+            <div class="nav-buttons">
+                <a class="nav-button previous" data-page="9.2">Vorige</a>
+                <a class="nav-button next" data-page="10.2">Volgende</a>
+            </div>
+        </div>
+
+        <div id="page-10.2" class="page" data-title="Vraag 10">
+            <div class="intro-box">
+                <h2>Moordwapen</h2>
+                <p class="center">Punt 10/15. Locatie: De Doorbraak</p>
+                <p>Kijk in de speeltuin goed om je heen. Het moordwapen was niet van het materiaal van het varken.
+                </p>
+            </div>
+            <div class="verdachten-grid-container"></div>
+            <div class="nav-buttons">
+                <a class="nav-button previous" data-page="10.1">Vorige</a>
+                <a class="nav-button next" data-page="11.1">Volgende</a>
+            </div>
+        </div>
+
+        <div id="page-11.1" class="page" data-title="Punt 11">
+            <div class="instruction-box">
+                <h2>Ga naar punt 11</h2>
+                <img alt="Route" src="../icons/Route.png"/>
+                <p>Loop de speeltuin uit en sla linksaf om de Oosterkerkstraat op het zebrapad over te steken.
+                Ga aan de overkant van het zebrapad rechtdoor naar de Maalderijstraat langs de Meelfabriektuin,
+                tot je aan je rechterhand een bruggetje naar het Ankerpark treft. Loop het Ankerpark uit
+                en ga rechtdoor over het bruggetje naar Brasserie De Poort. Stop vervolgens voor stadspoort de Zijlpoort.
+                </p>
+            </div>
+            <div class="verdachten-grid-container"></div>
+            <div class="nav-buttons">
+                <a class="nav-button previous" data-page="10.2">Vorige</a>
+                <a class="nav-button next" data-page="11.2">Volgende</a>
+            </div>
+        </div>
+
+        <div id="page-11.2" class="page" data-title="Vraag 11">
+            <div class="intro-box">
+                <h2>Alibi</h2>
+                <p class="center">Punt 11/15. Locatie: De Zijlpoort</p>
+                <p>Een van de verdachten bevond zich toen de moord gepleegd werd in deze poort. 
+                De verdachte had dagelijks te maken met hetgeen waar er zes van zijn.
+                </p>
+            </div>
+            <div class="verdachten-grid-container"></div>
+            <div class="nav-buttons">
+                <a class="nav-button previous" data-page="11.1">Vorige</a>
+                <a class="nav-button next" data-page="12.1">Volgende</a>
+            </div>
+        </div>
+
+        <div id="page-12.1" class="page" data-filename="Leiden-L1-singel-mm-12punt.html" data-title="Punt 12">
+            <div class="instruction-box">
+                <h2>Ga naar punt 12</h2>
+                <img alt="Route" src="../icons/Route.png"/>
+                <p>Vervolg je weg door de groene hekken. Ga een stukje rechtdoor en loop vervolgens met het pad mee naar links.
+                Steek het bruggetje over naar het Blekerspark en loop door het park met het water aan je rechterhand. 
+                Eenmaal uit het park, steek het zebrapad over en vervolg je weg over de loopbrug. 
+                Loop verder op het pad met het water aan je rechterhand door het Huigpark. 
+                Ga rechts voorbij het basketbalveldje tot je aan je linkerhand twee houten bankjes treft. 
+                </p>
+            </div>
+            <div class="verdachten-grid-container"></div>
+            <div class="nav-buttons">
+                <a class="nav-button previous" data-page="11.2">Vorige</a>
+                <a class="nav-button next" data-page="12.2">Volgende</a>
+            </div>
+        </div>
+
+        <div id="page-12.2" class="page" data-title="Vraag 12">
+            <div class="intro-box">
+                <h2>Aanwijzing</h2>
+                <p class="center">Punt 12/15. Locatie: Stenen Monument Huigpark</p>
+                <p>Kijk bij de bankjes goed om je heen. Een van de onschuldige verdachten is niet lang na de moord hier beland.
+                </p>
+            </div>
+            <div class="verdachten-grid-container"></div>
+            <div class="nav-buttons">
+                <a class="nav-button previous" data-page="12.1">Vorige</a>
+                <a class="nav-button next" data-page="13.1">Volgende</a>
+            </div>
+        </div>
+
+        <div id="page-13.1" class="page" data-title="Punt 13">
+            <div class="instruction-box">
+                <h2>Ga naar punt 13</h2>
+                <img alt="Route" src="../icons/Route.png"/>
+                <p>Blijf je pad vervolgen door het park met het water aan je rechterhand. 
+                Neem aan het einde van het park na circa 200 meter de witte brug rechts en sla aan de overkant linksaf. 
+                Loop over de Maresingel met het water aan je linkerhand.
+                Steek bij het kruispunt het zebrapad over om rechtsaf de Van Der Pauwkade in te gaan.
+                Neem het pad links tussen de twee grote witte bouwcomplexen door om naar het Slachthuispark te gaan.
+                Loop voorbij het eerste bakstenen gebouw en stop bij de tweede tot je je midden in het park bevindt.</p>
+            </div>
+            <div class="verdachten-grid-container"></div>
+            <div class="nav-buttons">
+                <a class="nav-button previous" data-page="12.2">Vorige</a>
+                <a class="nav-button next" data-page="13.2">Volgende</a>
+            </div>
+        </div>
+
+        <div id="page-13.2" class="page" data-title="Vraag 13">
+            <div class="intro-box">
+                <h2>Moordwapen</h2>
+                <p class="center">Punt 13/15. Locatie: Slachthuispark Nieuw Leyden</p>
+                <p>“Waarvan 6 dezelfde dieren graag eten, wil het moordwapen niks van weten.”
+                </p>
+            </div>
+            <div class="verdachten-grid-container"></div>
+            <div class="nav-buttons">
+                <a class="nav-button previous" data-page="13.1">Vorige</a>
+                <a class="nav-button next" data-page="14.1">Volgende</a>
+            </div>
+        </div>
+
+        <div id="page-14.1" class="page" data-title="Punt 14">
+            <div class="instruction-box">
+                <h2>Ga naar punt 14</h2>
+                <img alt="Route" src="../icons/Route.png"/>
+                <p>Volg het pad om het park te verlaten bij de Pasteurstraat. Sla linksaf, steek de Maresingel over en
+                ga vervolgens rechtsaf om je weg langs de Maresingel te vervolgen. Houd het water aan je linkerhand tot
+                je bij het kruispunt komt. Ga hier linksaf de Heen-en-Weerbrug over en blijf bij de witte paaltjes staan
+                op de hoek van de Vestwal.
+                </p>
+            </div>
+            <div class="verdachten-grid-container"></div>
+            <div class="nav-buttons">
+                <a class="nav-button previous" data-page="13.2">Vorige</a>
+                <a class="nav-button next" data-page="14.2">Volgende</a>
+            </div>
+        </div>
+
+        <div id="page-14.2" class="page" data-title="Vraag 14">
+            <div class="intro-box">
+                <h2>Alibi</h2>
+                <p class="center">Punt 14/15. Locatie: De Vestwal</p>
+                <p>Een van de verdachten woonde op de Vestwal en was thuis toen de moord gepleegd werd. 
+                Wiens beroep doet denken aan waarover Rosario sprak is onschuldig.
+                </p>
+            </div>
+            <div class="verdachten-grid-container"></div>
+            <div class="nav-buttons">
+                <a class="nav-button previous" data-page="14.1">Vorige</a>
+                <a class="nav-button next" data-page="15.1">Volgende</a>
+            </div>
+        </div>
+
+        <div id="page-15.1" class="page" data-title="Punt 15">
+            <div class="instruction-box">
+                <h2>Ga naar punt 15</h2>
+                <img alt="Route" src="../icons/Route.png"/>
+                <p>Verlaat de Vestwal-straat en ga rechtdoor voorbij de Heen-en-Weerbrug aan je rechterhand.
+                Vervolg je weg langs het water op de Marepoortkade. Loop in een directe lijn naar de molen
+                over het plein van de Lammermarkt. Stop als je bij de molen bent.</p>
+            </div>
+            <div class="verdachten-grid-container"></div>
+            <div class="nav-buttons">
+                <a class="nav-button previous" data-page="14.2">Vorige</a>
+                <a class="nav-button next" data-page="15.2">Volgende</a>
+            </div>
+        </div>
+
+        <div id="page-15.2" class="page" data-title="Vraag 15">
+            <div class="intro-box">
+                <h2>Moordwapen</h2>
+                <p class="center">Punt 15/15. Locatie: Molen &amp; Bevrijdingsmonument</p>
+                <p>De molenaar had de dagen na de moord iets geks ontdekt in het Plantsoen. 
+                Kan jij zijn volledige naam achterhalen? Zijn achternaam was gelijk aan die van de molen. 
+                Zijn voornaam bestond uit de laatste letters van een feestdag. 
+                Op deze dag lopen de eiken langs het water voor de tweede keer in het jaar uit.
+                </p>
+            </div>
+            <div class="input-wrapper">
+                <input autocomplete="off" data-answer="Jan de Valk,Jan Valk" class="answer-input" placeholder="Type je antwoord en druk op enter" type="text"/>
+                <p class="error" id="answerError" style="display:none;">
+                Helaas! Dit is niet het goede antwoord.
+                </p>
+            </div>
+            <div aria-hidden="true" class="overlay" id="infoOverlay">
+                <div class="modal">
+                    <button class="modal-close" id="infoClose2">✕</button>
+                    <h2 style="font-weight: bold; margin-bottom: 10px; text-align: center;">Correct!</h2>
+                    <p>Molenaar Jan de Valk had bij zijn rondjes door het Plantsoen allemaal 
+                    kleine gekleurde scherven en splintertjes nabij de struiken in de aarde zien glinsteren.
+                    </p>
+                </div>
+            </div>
+            <div class="verdachten-grid-container"></div>
+            <div class="nav-buttons">
+                <a class="nav-button previous" data-page="15.1">Vorige</a>
+                <a class="nav-button next" data-page="16.1">Volgende</a>
+            </div>
+        </div>
+
+        <div id="page-16.1" class="page" data-title="Antwoord">
+            <div class="intro-box">
+                <h2>Definitieve antwoord</h2>
+                <p class="center"></p>
+                <p>Vul hieronder het moordwapen in. Vink alle verdachten af, tot er maar 1 overblijft. Klik vervolgens op de rode knop.  
+                </p>
+            </div>
+            <div class="input-wrapper">
+                <input autocomplete="off" data-answer="Tuinkabouter" id="finalAnswerInput" placeholder="Type je antwoord en druk op enter" type="text"/>
+            </div>
+            <div class="verdachten-grid-container"></div>
+            <button class="final-button" disabled="" id="finalButton">ONTKNOPING</button>
+            <div class="nav-buttons">
+                <a class="nav-button previous" data-page="15.2">Vorige</a>
+            </div>
+        </div>
+
+        <div id="page-100" class="page" data-title="Helaas!">
+            <div class="result-box">
+                <h2>Resultaat</h2>
+                <p class="center"></p>
+                <p>Helaas! Het moordwapen was de tuinkabouter. De moordenaar was de eigenaar van de muziektent.
+                </p>
+                <h2>Het verhaal van de moord op François Was...</h2>
+                <p>De burgemeester was niet populair bij de culturele sector van zijn stad. 
+                Gebouwen zoals de concertzaal en de volière zouden moeten wijken voor winstmakende berdrijven.
+                Toch had de burgemeester beloofd om de volière te behouden, wat de eigenaar van de concertzaal nog woedender maakte.
+                Zijn dreigbrief had de burgemeester niet van gedachten veranderd.
+                Toen, de avond voor de moord, de burgemeester ook nog in de concertzaal doorbracht, was het voor de eigenaar te veel. 
+                De portier zag de burgemeester laat in de avond vertrekken. 
+                Vlak erna vertrok de eigenaar, hij griste een tuinkabouter mee op zijn pad,
+                liep achter de burgemeester aan en sloeg hem hard op zijn achterhoofd. 
+                Zo hard dat de tuinkabouter brak en in vele scherven verspilnterde.
+                De burgemeester bezweek. 
+                De eigenaar sleepte hem in het donker naar de struiken en nam alle scherven die hij met het oog kon zien mee.</p>
+            </div>
+            <a class="back-button" href="../leiden-wandelroutes.html" id="closeGameButton">Spel sluiten</a>
+        </div>
+
+        <div id="page-101" class="page" data-title="Helaas!">
+            <div class="result-box">
+                <h2>Resultaat</h2>
+                <p class="center"></p>
+                <p>Bijna! Het moordwapen was de tuinkabouter. De moordenaar was inderdaad de eigenaar van de muziektent.
+                </p>
+                <h2>Het verhaal van de moord op François Was...</h2>
+                <p>De burgemeester was niet populair bij de culturele sector van zijn stad. 
+                Gebouwen zoals de concertzaal en de volière zouden moeten wijken voor winstmakende berdrijven.
+                Toch had de burgemeester beloofd om de volière te behouden, wat de eigenaar van de concertzaal nog woedender maakte.
+                Zijn dreigbrief had de burgemeester niet van gedachten veranderd.
+                Toen, de avond voor de moord, de burgemeester ook nog in de concertzaal doorbracht, was het voor de eigenaar te veel. 
+                De portier zag de burgemeester laat in de avond vertrekken. 
+                Vlak erna vertrok de eigenaar, hij griste een tuinkabouter mee op zijn pad,
+                liep achter de burgemeester aan en sloeg hem hard op zijn achterhoofd. 
+                Zo hard dat de tuinkabouter brak en in vele scherven verspilnterde.
+                De burgemeester bezweek. 
+                De eigenaar sleepte hem in het donker naar de struiken en nam alle scherven die hij met het oog kon zien mee.</p>
+            </div>
+            <a class="back-button" href="../leiden-wandelroutes.html" id="closeGameButton">Spel sluiten</a>
+        </div>
+
+        <div id="page-102" class="page" data-title="Gefeliciteerd!">
+            <div class="result-box">
+                <h2>Resultaat</h2>
+                <p class="center"></p>
+                <p>Gefeliciteerd! Je hebt zowel het moordwapen, als de moordenaar goed geraden.
+                </p>
+                <h2>Krantenkop: Detective ontrafelt historische moord op François Was.</h2>
+                <p>Jij hebt dankzij de nieuwe clues die na meer dan 100 jaar boven water zijn gekomen het mysterieuze verhaal rond gekregen.
+                De burgemeester was niet populair bij de culturele sector van zijn stad. 
+                Gebouwen zoals de concertzaal en de volière zouden moeten wijken voor winstmakende berdrijven.
+                Toch had de burgemeester beloofd om de volière te behouden, wat de eigenaar van de concertzaal nog woedender maakte.
+                Zijn dreigbrief had de burgemeester niet van gedachten veranderd.
+                Toen, de avond voor de moord, de burgemeester ook nog in de concertzaal doorbracht, was het voor de eigenaar te veel. 
+                De portier zag de burgemeester laat in de avond vertrekken. Vlak erna vertrok de eigenaar, hij griste een tuinkabouter mee op zijn pad
+                liep achter de burgemeester aan en sloeg hem hard op zijn achterhoofd. Zo hard dat de tuinkabouter brak en in vele scherven verspilnterde.
+                De burgemeester bezweek. De eigenaar sleepte hem in het donker naar de struiken en nam alle scherven die hij met het oog kon zien mee.
+                </p>
+            </div>
+            <a class="back-button" href="../leiden-wandelroutes.html" id="closeGameButton">Spel sluiten</a>
+        </div>
+
+        <div id="page-103" class="page" data-title="Helaas!">
+            <div class="result-box">
+                <h2>Resultaat</h2>
+                <p class="center"></p>
+                <p>Bijna! Het moordwapen was inderdaad de tuinkabouter, maar de moordenaar was de eigenaar van de muziektent.</p>
+                <h2>Het verhaal van de moord op François Was...</h2>
+                <p>De burgemeester was niet populair bij de culturele sector van zijn stad. 
+                Gebouwen zoals de concertzaal en de volière zouden moeten wijken voor winstmakende berdrijven.
+                Toch had de burgemeester beloofd om de volière te behouden, wat de eigenaar van de concertzaal nog woedender maakte.
+                Zijn dreigbrief had de burgemeester niet van gedachten veranderd.
+                Toen, de avond voor de moord, de burgemeester ook nog in de concertzaal doorbracht, was het voor de eigenaar te veel. 
+                De portier zag de burgemeester laat in de avond vertrekken. 
+                Vlak erna vertrok de eigenaar, hij griste een tuinkabouter mee op zijn pad
+                liep achter de burgemeester aan en sloeg hem hard op zijn achterhoofd. 
+                Zo hard dat de tuinkabouter brak en in vele scherven verspilnterde.
+                De burgemeester bezweek. 
+                De eigenaar sleepte hem in het donker naar de struiken en nam alle scherven die hij met het oog kon zien mee.</p>
+            </div>
+            <a class="back-button" href="../leiden-wandelroutes.html" id="closeGameButton">Spel sluiten</a>
+        </div>
+    </div>
+    
+    <script src="Leiden-Lsingel-script-moordmysterie.js"></script>
+    <script src="../script.js"></script>
+
+</body>
+</html>
